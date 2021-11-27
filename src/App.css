@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+* {
+  font-family: "Segoe UI";
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 2vh;
+}

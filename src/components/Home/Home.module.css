@@ -1,0 +1,29 @@
+/* HOME */
+
+.header {
+  margin-top: 20px;
+  margin-left: 2vw;
+  display: flex;
+}
+.title {
+  font-size: 5vh;
+  text-decoration: none;
+  color: #2c40ff;
+  font-weight: bold;
+}
+
+.body {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.phrase {
+  font-size: 5vh;
+}
+.msgContainer {
+  position: absolute;
+  top: 170%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
