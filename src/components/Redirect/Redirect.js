@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import classes from "./Redirect.module.css";
+import Lottie from "react-lottie";
+import CarLottie from "../../Assets/Lottie/Car_Lottie.json";
 require("dotenv").config();
 
 function Redirect() {
@@ -31,9 +33,27 @@ function Redirect() {
       });
   };
 
+  const options = {
+    loop: true,
+    autoplay: true,
+    animationData: CarLottie,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <>
-      {redirecting && <h1>Redirecting</h1>}
+      <div className={classes.container}>
+        {redirecting && (
+          <div>
+            <center>
+              <h1>Redirecting</h1>
+            </center>
+            <Lottie options={options} height={400} width={400} />
+          </div>
+        )}
+      </div>
       {error && (
         <div className={classes.msgContainer}>
           <center>

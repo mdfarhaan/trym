@@ -1,12 +1,26 @@
 import React from "react";
 import classes from "./Modal.module.css";
+import Lottie from "react-lottie";
+
+import Error from "../../Assets/Lottie/Error.json";
 
 function Modal(props) {
+  const lottiOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Error,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div>
       <div className={classes.overlay}>
         <div className={classes.modal}>
-          <p className={classes.phrase}>{props.msg}</p>
+          <span>
+            <p className={classes.phrase}>{props.msg}</p>
+          </span>
         </div>
       </div>
     </div>

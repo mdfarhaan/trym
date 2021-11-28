@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import classes from "./CustomLink.module.css";
 import Modal from "../../Modal/Modal";
 import { TiArrowLeftOutline } from "react-icons/ti";
+import Lottie from "react-lottie";
+import Link from "../../../Assets/Lottie/Link_1.json";
 const validUrl = require("valid-url");
 require("dotenv").config();
 
@@ -11,10 +13,12 @@ function CustomLink(props) {
   const [code, setCode] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [error, setError] = useState(false);
+  const [lottieComp, setLottieComp] = useState(false);
 
-  const addUrl = () => {
+  const addUrl = async () => {
     if (validUrl.isUri(longUrl)) {
       if (code !== "") {
+        setLottieComp(!lottieComp);
         const reqOptions = {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -24,7 +28,7 @@ function CustomLink(props) {
             customCode: true,
           }),
         };
-        fetch(URL + "tr/cu", reqOptions)
+        await fetch(URL + "tr/cu", reqOptions)
           .then((response) => {
             response.json().then((data) => {
               props.res(data);
@@ -42,6 +46,15 @@ function CustomLink(props) {
       setError(true);
       setErrMsg("Invalid URL! Please enter a valid URL");
     }
+  };
+
+  const lottiOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Link,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
   };
 
   return (
@@ -73,16 +86,22 @@ function CustomLink(props) {
       <button onClick={props.arrowBtnHandler} className={classes.arrowBtn}>
         <TiArrowLeftOutline size={30} color={"black"} />
       </button>
-      {error && (
-        <div className={classes.msgContainer}>
+      <div className={classes.msgContainer}>
+        {lottieComp && (
+          <center>
+            <h1>Trimming your URL</h1>
+            <Lottie options={lottiOptions} height={150} width={150} />
+          </center>
+        )}
+        {error && (
           <center>
             <Modal msg={errMsg} />
             {setTimeout(() => {
               setError(!error);
             }, 3000)}
           </center>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }

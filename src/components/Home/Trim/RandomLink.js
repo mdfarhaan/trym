@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import classes from "./RandomLink.module.css";
 import Modal from "../../Modal/Modal";
 import { TiArrowRightOutline } from "react-icons/ti";
+import Lottie from "react-lottie";
+import Link from "../../../Assets/Lottie/Link_1.json";
 const validUrl = require("valid-url");
 require("dotenv").config();
 
@@ -10,9 +12,11 @@ function RandomLink(props) {
   const [longUrl, setLongUrl] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [error, setError] = useState(false);
+  const [lottieComp, setLottieComp] = useState(false);
 
   const addUrl = () => {
     if (validUrl.isUri(longUrl)) {
+      setLottieComp(!lottieComp);
       const reqOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -35,6 +39,15 @@ function RandomLink(props) {
       setError(true);
       setErrMsg("Invalid URL! Please enter a valid URL");
     }
+  };
+
+  const lottiOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Link,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
   };
 
   return (
@@ -65,16 +78,22 @@ function RandomLink(props) {
           </h1>
         </span>
       </div>
-      {error && (
-        <div className={classes.msgContainer}>
+      <div className={classes.msgContainer}>
+        {lottieComp && (
+          <center>
+            <h1>Trimming your URL</h1>
+            <Lottie options={lottiOptions} height={150} width={150} />
+          </center>
+        )}
+        {error && (
           <center>
             <Modal msg={errMsg} />
             {setTimeout(() => {
               setError(!error);
             }, 3000)}
           </center>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }
