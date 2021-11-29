@@ -1,11 +1,17 @@
+@font-face {
+  font-family: "Sansation";
+  font-style: normal;
+  font-weight: 400;
+
+  src: local("Sansation"), local("Sansation"),
+    url("./Assets/Font/Sansation.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: white;
-}
-
-* {
-  font-family: "Segoe UI";
+  font-family: "Sansation";
 }
 
 input:focus {

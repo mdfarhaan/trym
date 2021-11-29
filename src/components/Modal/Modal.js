@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Modal.module.css";
 import Lottie from "react-lottie";
 
-import Error from "../../Assets/Lottie/Error.json";
+import Error from "../../Assets/Lottie/Cycle.json";
 
 function Modal(props) {
   const lottiOptions = {
