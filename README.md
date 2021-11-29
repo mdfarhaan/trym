@@ -1,11 +1,11 @@
-# Trym - URL Shortner
+# Trym - URL Shortener 
 <p align="center">
     <img src="https://img.shields.io/badge/version-1.0.0-yellowgreen" alt="version 1.0.0"/>
     <img src="https://img.shields.io/badge/author-mdFarhaan-orange" alt="author Md Farhaan"/>
 </p>
 
 <p align="center">
-  Shorten your url with <a href="https://www.trym.ml/">TRYM</a> choose your custom code to shorten your url how cool is that!
+  Shorten your url with your custom code at <a href="https://www.trym.ml/">TRYM</a> How cool is that!
 </p>
 
 
