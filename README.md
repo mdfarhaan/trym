@@ -1,6 +1,6 @@
 # Trym - URL Shortener 
 <p align="center">
-    <img src="https://img.shields.io/badge/version-1.0.0-yellowgreen" alt="version 1.0.0"/>
+    <img src="https://img.shields.io/badge/version-1.0.0-green" alt="version 1.0.0"/>
     <img src="https://img.shields.io/badge/author-mdFarhaan-orange" alt="author Md Farhaan"/>
 </p>
 
