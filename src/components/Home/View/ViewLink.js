@@ -15,7 +15,7 @@ function ViewLink(props) {
   return (
     <>
       <h1 className={classes.phrase}>Your URL!</h1>
-      <div className={classes.Box}>
+      <div className={classes.box}>
         <p className={classes.urlPhrase}>{baseUrl + props.code}</p>
         <button type="submit" className={classes.copyBtn} onClick={copyText}>
           copy

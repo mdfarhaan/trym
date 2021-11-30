@@ -27,3 +27,31 @@
   font-size: 3vh;
   color: white;
 }
+
+/* Responsive Styles */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .modal {
+    min-width: 450px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .modal {
+    min-width: 350px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .modal {
+    min-width: 300px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .modal {
+    min-width: 200px;
+  }
+  .phrase {
+    font-size: 2vh;
+  }
+}

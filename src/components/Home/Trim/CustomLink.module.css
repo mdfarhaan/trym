@@ -68,3 +68,43 @@
   background-color: white;
   cursor: pointer;
 }
+
+/* Responsive Styles */
+
+@media screen and (max-width: 850px) {
+  .body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+  }
+  .urlInputBox {
+    width: 100%;
+  }
+  .codeInputBox {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 60%;
+  }
+  .msgContainer {
+    top: 140%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .codeInputBox {
+    display: block;
+    height: 40px;
+    width: 100%;
+  }
+  .inputBtn {
+    margin-top: 25px;
+    height: 45px;
+    width: 100%;
+  }
+  .arrowBtn {
+    margin-top: 90px;
+  }
+  .msgContainer {
+    top: 120%;
+  }
+}

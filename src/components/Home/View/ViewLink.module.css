@@ -1,6 +1,6 @@
 /* View Links */
-.Box {
-  width: 50vw;
+.box {
+  width: 60vw;
   height: 60px;
   border: 2px solid black;
   border-radius: 15px;
@@ -36,4 +36,49 @@
   top: 180%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 850px) {
+  .box {
+    display: grid;
+    place-items: center;
+    height: 80px;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .urlPhrase {
+    font-size: 3vh;
+  }
+  .copyBtn {
+    height: 45px;
+    width: 60%;
+  }
+  .msgContainer {
+    top: 200%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .box {
+    padding: 0 10px;
+    width: 100%;
+  }
+  .urlPhrase {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .box {
+    height: 55px;
+    width: 100%;
+  }
+  .urlPhrase {
+    font-size: 2vh;
+  }
+  .msgContainer {
+    margin-left: 10px;
+  }
 }

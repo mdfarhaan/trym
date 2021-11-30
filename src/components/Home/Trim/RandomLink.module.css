@@ -35,6 +35,7 @@
 .inputBtn:active {
   opacity: 0.9;
 }
+
 .msgContainer {
   position: absolute;
   top: 150%;
@@ -54,4 +55,22 @@
 }
 .arrowBtn:hover {
   cursor: pointer;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 600px) {
+  .inputBox {
+    display: block;
+    height: 40px;
+  }
+  .inputBtn {
+    margin-top: 20px;
+    height: 45px;
+    width: 100%;
+  }
+  .radioContent {
+    margin-top: 60px;
+    place-items: start;
+  }
 }
