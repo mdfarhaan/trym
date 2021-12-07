@@ -1,8 +1,8 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const config = require("./shared/config");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = config.PORT || 3000;
 
 const corsOpts = {
   origin: "*",
@@ -14,9 +14,10 @@ const corsOpts = {
 
 app.use(cors(corsOpts));
 app.use(express.json());
+
 app.use("/", require("./routes/link"));
 app.use("/tr", require("./routes/trim"));
 
-app.listen(PORT, () => {
-  console.log("Server running on Port: " + PORT);
+app.listen(PORT, (err) => {
+  err ? console.log(err) : console.log("Server running on Port: " + PORT);
 });

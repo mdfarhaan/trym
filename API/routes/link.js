@@ -1,14 +1,12 @@
-require("dotenv").config();
 const express = require("express");
+const db = require("../shared/database");
 const router = express.Router();
-const MongoClient = require("mongodb").MongoClient;
-const URL = process.env.URL;
 
 // get link from db
-router.get("/:id", (req, res) => {
-  MongoClient.connect(URL, (err, client) => {
-    let db = client.db("trym-db");
-    db.collection("links").findOne({ code: req.params.id }, (err, doc) => {
+router.get("/:id", async (req, res) => {
+  (await db())
+    .collection("links")
+    .findOne({ code: req.params.id }, (err, doc) => {
       if (doc == null) {
         res.status(404).send({
           msg: "URL not availabe! Check the code",
@@ -22,7 +20,6 @@ router.get("/:id", (req, res) => {
         });
       }
     });
-  });
 });
 
 module.exports = router;

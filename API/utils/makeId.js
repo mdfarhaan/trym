@@ -1,16 +1,11 @@
-require("dotenv").config();
-const MongoClient = require("mongodb").MongoClient;
-const URL = process.env.URL;
+const db = require("../shared/database");
 
 const storedCodes = ["", " ", null];
 
-const makeID = () => {
-  MongoClient.connect(URL, (err, client) => {
-    let db = client.db("trym-db");
-    let cursor = db.collection("codes").find();
-    cursor.forEach((doc) => {
-      storedCodes.push(doc.code);
-    });
+const makeID = async () => {
+  let cursor = (await db()).collection("codes").find();
+  cursor.forEach((doc) => {
+    storedCodes.push(doc.code);
   });
 
   let result = "";
