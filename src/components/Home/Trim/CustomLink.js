@@ -31,19 +31,25 @@ function CustomLink(props) {
         await fetch(URL + "tr/cu", reqOptions)
           .then((response) => {
             response.json().then((data) => {
-              props.res(data);
+              if (data.status === "success") {
+                props.res(data);
+              } else if (data.status === "failed") {
+                setLottieComp(false);
+                setError(!error);
+                setErrMsg(data.msg);
+              }
             });
           })
           .catch((err) => {
             console.log(err);
           });
       } else {
-        setError(true);
+        setError(!error);
         setErrMsg("Please enter a valid code!");
       }
     } else {
       console.log("URL is not valid");
-      setError(true);
+      setError(!error);
       setErrMsg("Invalid URL! Please enter a valid URL");
     }
   };
