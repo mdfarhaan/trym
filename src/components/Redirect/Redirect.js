@@ -8,6 +8,7 @@ require("dotenv").config();
 
 function Redirect() {
   const URL = process.env.REACT_APP_API;
+  const Domain = process.env.REACT_APP_Domain;
   let { id } = useParams();
   const [redirecting, setRedirecting] = useState(true);
   const [errMsg, setErrMsg] = useState("");
@@ -44,6 +45,11 @@ function Redirect() {
 
   return (
     <>
+      <div className={classes.header}>
+        <a href="/" className={classes.title}>
+          TRYM
+        </a>
+      </div>
       <div className={classes.container}>
         {redirecting && (
           <div>
@@ -58,6 +64,9 @@ function Redirect() {
         <div className={classes.msgContainer}>
           <center>
             <Modal msg={errMsg} />
+            {setTimeout(() => {
+              window.location.href = `${Domain}`;
+            }, 5000)}
           </center>
         </div>
       )}

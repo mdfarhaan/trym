@@ -21,6 +21,9 @@ function App() {
         <a href="/" className={classes.title}>
           TRYM
         </a>
+        <p>
+          Do you have a <a href="/code">code</a> ?
+        </p>
       </div>
 
       <div className={classes.body}>

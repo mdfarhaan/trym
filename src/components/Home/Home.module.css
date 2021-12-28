@@ -3,13 +3,25 @@
 .header {
   margin-top: 20px;
   margin-left: 2vw;
+  margin-right: 2vw;
   display: flex;
+  justify-content: space-between;
 }
 .title {
   font-size: 5vh;
   text-decoration: none;
   color: #2c40ff;
   font-weight: bold;
+}
+
+.header p {
+  font-size: 2vh;
+}
+
+.header a {
+  color: #2c40ff;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .body {
