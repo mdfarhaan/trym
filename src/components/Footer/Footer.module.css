@@ -1,0 +1,27 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.footer p {
+  font-size: 22px;
+}
+
+.linkedin {
+  margin-left: 0.5rem;
+  margin-right: 0.7rem;
+  transform: translateY(2px);
+}
+
+.icon {
+  transform: translateY(7px);
+}
+
+.globe {
+  transform: translateY(-5px);
+}

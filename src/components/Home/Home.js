@@ -3,6 +3,7 @@ import classes from "./Home.module.css";
 import RandomLink from "./Trim/RandomLink";
 import CustomLink from "./Trim/CustomLink";
 import ViewLink from "./View/ViewLink";
+import Footer from "../Footer/Footer";
 
 function App() {
   const [customComp, setCustomComp] = useState(false);
@@ -43,6 +44,7 @@ function App() {
           <ViewLink code={code} />
         )}
       </div>
+      <Footer />
     </>
   );
 }
