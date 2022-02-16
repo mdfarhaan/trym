@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-const config = require("./shared/config");
+const config = require("./src/shared/config");
 const app = express();
-const PORT = config.PORT || 3000;
+const PORT = config.PORT || 5000;
 
 const corsOpts = {
   origin: "*",
@@ -15,8 +15,11 @@ const corsOpts = {
 app.use(cors(corsOpts));
 app.use(express.json());
 
-app.use("/", require("./routes/link"));
-app.use("/tr", require("./routes/trim"));
+app.use("/api/v1", require("./src/routes"));
+
+app.use("/", (req, res) => {
+  res.send("Trym API");
+});
 
 app.listen(PORT, (err) => {
   err ? console.log(err) : console.log("Server running on Port: " + PORT);
