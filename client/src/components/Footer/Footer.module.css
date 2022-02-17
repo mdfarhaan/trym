@@ -10,6 +10,7 @@
 
 .footer p {
   font-size: 22px;
+  margin-block-start: 0;
 }
 
 .linkedin {
