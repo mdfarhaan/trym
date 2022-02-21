@@ -88,6 +88,9 @@
   .msgContainer {
     top: 140%;
   }
+  .codeInput {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -106,5 +109,11 @@
   }
   .msgContainer {
     top: 120%;
+  }
+  .urlInput {
+    width: 90%;
+  }
+  .urlInputBox {
+    height: 40px;
   }
 }

@@ -73,4 +73,7 @@
     margin-top: 60px;
     place-items: start;
   }
+  .urlInput {
+    width: 90%;
+  }
 }
