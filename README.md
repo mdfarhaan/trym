@@ -7,7 +7,7 @@
 
 <p align="center">
   Shorten your url with your custom code at <a href="https://www.trym.ml/">TRYM</a> How cool is that!
-  <img src="./Screens/trym.png" />
+  <img src="./Screens/trym.png" height="400"/>
 </p>
 
 ## Built With
