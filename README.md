@@ -4,9 +4,8 @@
     <img src="https://img.shields.io/badge/version-1.0.0-green" alt="version 1.0.0"/>
     <img src="https://img.shields.io/badge/author-mdFarhaan-orange" alt="author Md Farhaan"/>
 </p>
-
+  <h2 align="center">Shorten your url with your custom code at <a href="https://www.trym.ml/">TRYM</a> How cool is that!</h2>
 <p align="center">
-  Shorten your url with your custom code at <a href="https://www.trym.ml/">TRYM</a> How cool is that!
   <img src="./Screens/trym.png" height="400"/>
 </p>
 
