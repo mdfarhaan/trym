@@ -4,11 +4,10 @@ import Modal from "../../Modal/Modal";
 import { TiArrowLeftOutline } from "react-icons/ti";
 import Lottie from "react-lottie";
 import Link from "../../../Assets/Lottie/Link_1.json";
+import { constant } from "../../../utils/constants";
 const validUrl = require("valid-url");
-require("dotenv").config();
 
 function CustomLink(props) {
-  const URL = process.env.REACT_APP_API;
   const [longUrl, setLongUrl] = useState("");
   const [code, setCode] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -28,7 +27,7 @@ function CustomLink(props) {
             customCode: true,
           }),
         };
-        await fetch(URL + "tr/cu", reqOptions)
+        await fetch(constant.API_URL + "tr/cu", reqOptions)
           .then((response) => {
             response.json().then((data) => {
               if (data.status === "success") {

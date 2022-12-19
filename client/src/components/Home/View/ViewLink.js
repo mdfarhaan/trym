@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import classes from "./ViewLink.module.css";
 import Modal from "../../Modal/Modal";
-require("dotenv").config();
+import { constant } from "../../../utils/constants";
 
 function ViewLink(props) {
   const [msg, setMsg] = useState(false);
-  const baseUrl = process.env.REACT_APP_Domain;
 
   const copyText = () => {
     setMsg(!msg);
-    navigator.clipboard.writeText(baseUrl + props.code);
+    navigator.clipboard.writeText(constant.Domain + props.code);
   };
 
   return (
     <>
       <h1 className={classes.phrase}>Your URL!</h1>
       <div className={classes.box}>
-        <p className={classes.urlPhrase}>{baseUrl + props.code}</p>
+        <p className={classes.urlPhrase}>{constant.Domain + props.code}</p>
         <button type="submit" className={classes.copyBtn} onClick={copyText}>
           copy
         </button>

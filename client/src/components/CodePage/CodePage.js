@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import classes from "./CodePage.module.css";
-require("dotenv").config();
+import { constant } from "../../utils/constants";
 
 function RandomLink() {
-  const URL = process.env.REACT_APP_Domain;
   const [code, setCode] = useState("");
 
   return (
@@ -26,7 +25,7 @@ function RandomLink() {
           <button
             type="submit"
             className={classes.inputBtn}
-            onClick={() => (window.location.href = `${URL}${code}`)}
+            onClick={() => (window.location.href = `${constant.Domain}${code}`)}
           >
             Visit
           </button>

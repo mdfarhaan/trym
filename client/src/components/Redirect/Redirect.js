@@ -4,11 +4,9 @@ import Modal from "../Modal/Modal";
 import classes from "./Redirect.module.css";
 import Lottie from "react-lottie";
 import CarLottie from "../../Assets/Lottie/Car_Lottie.json";
-require("dotenv").config();
+import { constant } from "../../utils/constants";
 
 function Redirect() {
-  const URL = process.env.REACT_APP_API;
-  const Domain = process.env.REACT_APP_Domain;
   let { id } = useParams();
   const [redirecting, setRedirecting] = useState(true);
   const [errMsg, setErrMsg] = useState("");
@@ -20,7 +18,7 @@ function Redirect() {
   }, []);
 
   const getUrl = () => {
-    fetch(URL + id)
+    fetch(constant.API_URL + id)
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "success") {
@@ -65,7 +63,7 @@ function Redirect() {
           <center>
             <Modal msg={errMsg} />
             {setTimeout(() => {
-              window.location.href = `${Domain}`;
+              window.location.href = `${constant.Domain}`;
             }, 5000)}
           </center>
         </div>
