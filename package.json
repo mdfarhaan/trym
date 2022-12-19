@@ -2,10 +2,10 @@
   "name": "trym-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "start": "node server.js"
+    "devStart": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
